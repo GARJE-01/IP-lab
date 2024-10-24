@@ -1,0 +1,69 @@
+Create Basic Components
+In the src directory, create a folder named components, and inside that folder, create three files:
+
+Home.js
+
+javascript
+Copy code
+// src/components/Home.js
+import React from 'react';
+
+const Home = () => <h1>Home Page</h1>;
+
+export default Home;
+About.js
+
+javascript
+Copy code
+// src/components/About.js
+import React from 'react';
+
+const About = () => <h1>About Page</h1>;
+
+export default About;
+Contact.js
+
+javascript
+Copy code
+// src/components/Contact.js
+import React from 'react';
+
+const Contact = () => <h1>Contact Page</h1>;
+
+export default Contact;
+4. Set Up Routing in App.js
+Now, modify App.js to use React Router:
+
+javascript
+Copy code
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+
+const App = () => {
+    return (
+        <Router>
+            <nav>
+                <Link to="/">Home</Link> | 
+                <Link to="/about">About</Link> | 
+                <Link to="/contact">Contact</Link>
+            </nav>
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/contact" component={Contact} />
+            </Switch>
+        </Router>
+    );
+};
+
+export default App;
+5. Run Your App
+Start the application:
+
+bash
+Copy code
+npm start

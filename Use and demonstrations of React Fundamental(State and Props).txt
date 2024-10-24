@@ -1,0 +1,59 @@
+Set Up Your React App
+npx create-react-app simple-state-props
+cd simple-state-props
+
+Create a Greeting Component
+Create Greeting.js:
+
+Create a file named Greeting.js in the src folder:
+
+import React from 'react';
+
+const Greeting = ({ name }) => {
+    return <h1>Hello, {name}!</h1>;
+};
+
+export default Greeting;
+
+
+3. Create a Simple Counter Component
+Create Counter.js:
+
+Create a file named Counter.js in the src folder:
+
+import React, { useState } from 'react';
+
+const Counter = () => {
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <h2>Count: {count}</h2>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+        </div>
+    );
+};
+
+export default Counter;
+4. Update App.js
+Now, use these components in App.js:
+import React from 'react';
+import Greeting from './Greeting';
+import Counter from './Counter';
+
+const App = () => {
+    return (
+        <div>
+            <Greeting name="Alice" />
+            <Greeting name="Bob" />
+            <Counter />
+        </div>
+    );
+};
+
+export default App;
+
+5. Run Your Application
+Start your React app:
+
+npm start

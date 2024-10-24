@@ -1,0 +1,32 @@
+import React, { useEffect, useState, useRef } from 'react';
+
+npx create-react-app user-list-app
+cd user-list-app
+Replace the Default App Component
+Open the src folder in your project.
+
+const App = () => {
+    const [users, setUsers] = useState([]);
+    const inputRef = useRef();
+
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(res => res.json())
+            .then(setUsers);
+    }, []);
+
+    return (
+        <div>
+            <h1>Users</h1>
+            <ul>
+                {users.map(user => (
+                    <li key={user.id}>{user.name}</li>
+                ))}
+            </ul>
+            <input ref={inputRef} placeholder="Focus me" />
+            <button onClick={() => inputRef.current.focus()}>Focus</button>
+        </div>
+    );
+};
+
+export default App;

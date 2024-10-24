@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Basics</title>
+</head>
+<body>
+
+<h2>JavaScript Basics</h2>
+<button id="demoButton">Click me</button>
+<p id="demo"></p>
+
+<script>
+// 1. Variables
+let name = "Alice"; // Using let
+const age = 25; // Using const
+
+// 2. Conditionals
+function checkAge() {
+    if (age >= 18) {
+        return `${name} is an adult.`;
+    } else {
+        return `${name} is a minor.`;
+    }
+}
+
+// 3. Loops
+function countToFive() {
+    let result = '';
+    for (let i = 1; i <= 5; i++) {
+        result += i + ' ';
+    }
+    return result.trim();
+}
+
+// 4. Regular Function
+function greetUser(userName) {
+    return `Hello, ${userName}!`;
+}
+
+
+// Event Listener
+document.getElementById('demoButton').onclick = () => {
+    document.getElementById('demo').innerText = `
+        ${checkAge()}
+        Count to five: ${countToFive()}
+        ${greetUser(name)}
+    `;
+};
+</script>
+
+</body>
+</html>

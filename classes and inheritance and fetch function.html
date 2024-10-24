@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Info</title>
+</head>
+<body>
+    <h1>User Information</h1>
+    <div id="name"></div>
+    <div id="Class"></div>
+    <div id="sub"></div>
+
+    <script>
+        class User {
+            constructor(Name, Class, sub) {
+                this.Name = Name;
+                this.Class = Class;
+                this.sub = sub;
+            }
+
+            getUsername() {
+                return this.Name + " " + this.Class;
+            }
+        }
+
+        const obj1 = new User("Arman Nakhava", "TE IT", "AdvDevOps");
+        document.getElementById("name").innerHTML = "Name: " + obj1.Name;
+        document.getElementById("Class").innerHTML = "Class: " + obj1.Class;
+        document.getElementById("sub").innerHTML = "Subject: " + obj1.sub;
+    </script>
+</body>
+</html>
